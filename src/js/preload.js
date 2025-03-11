@@ -1,12 +1,11 @@
 // Ce script sera executer avant le chargement de la page
 // Accés aux API Node et Electron
 
-const {contextBridge} = require('electron');
+const {contextBridge,ipcRenderer} = require('electron');
 
 contextBridge.exposeInMainWorld('versions',{
-    electron : process.versions.electron,
-    node: process.versions.node,
-    chrome: process.versions.chrome
+    // Fonction qui récupere les versions via IPC (InterProcessusCommunication)
+    getVersions : () => ipcRenderer.invoke('get-versions')
 })
 
 console.log("preload chargé avec succes")
