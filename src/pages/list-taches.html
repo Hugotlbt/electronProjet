@@ -5,11 +5,17 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <title>Liste des taches</title>
 </head>
-<body>
+<body class="bg-body-secondary">
 
 <h1>Liste des taches</h1>
 
+<button class="btn btn-sm btn-primary" id="refresh" onclick="document.location.reload(false)"> Rafraichir </button>
+
+<div class="row" id="ListeTaches"></div>
+
+<script src="../js/liste-taches.js"></script>
 </body>
 </html>
